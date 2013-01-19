@@ -31,12 +31,20 @@ install_quicklisp() {
     qli="$qlidir/quicklisp.lisp"
     mkdir -p "$qlidir"
     wget -O "$qli" http://beta.quicklisp.org/quicklisp.lisp
+
+    old_init_asdf_1="$init_asdf_1"
+    old_init_asdf_2="$init_asdf_2"
     init_asdf_1='(progn)'
     init_asdf_2='(progn)'
+
     echo "$quit" | \
 	run_lisp_raw \
 	$eval "(load \"$qli\")" \
 	$eval "(progn (quicklisp-quickstart:install) $quit)"
+
+    # restore intialization code
+    init_asdf_1="$old_init_asdf_1"
+    init_asdf_2="$old_init_asdf_2"
 }
 
 ensure_quicklisp() {
