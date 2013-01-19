@@ -41,11 +41,7 @@
 ;; source registry, which still contains #+sbcl ~/.sbcl and related
 ;; insanities.
 ;;
-(setf (asdf::source-registry)
-      (remove-if-not (lambda (x)
-		       ;; argh!  Contribs used to have their own system
-		       ;; definition search function, but it appears
-		       ;; that upgrading to new ASDF nukes those and
-		       ;; goes through the the source registry instead?
-		       (or #+sbcl (search "/sb-" (namestring x))))
-		     (asdf::source-registry)))
+(maphash #'(lambda (key value)
+             (unless (or #+sbcl (search "/sb-" (namestring value)))
+               (remhash key asdf::*source-registry*)))
+         asdf::*source-registry*)
