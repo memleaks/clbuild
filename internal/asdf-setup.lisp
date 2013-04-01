@@ -41,7 +41,8 @@
 ;; source registry, which still contains #+sbcl ~/.sbcl and related
 ;; insanities.
 ;;
-(maphash #'(lambda (key value)
-             (unless (or #+sbcl (search "/sb-" (namestring value)))
-               (remhash key asdf::*source-registry*)))
-         asdf::*source-registry*)
+(when (hash-table-p asdf::*source-registry*)
+  (maphash #'(lambda (key value)
+	       (unless (or #+sbcl (search "/sb-" (namestring value)))
+		 (remhash key asdf::*source-registry*)))
+	   asdf::*source-registry*))
