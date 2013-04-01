@@ -374,3 +374,5 @@ gbbopen get_svn http://gbbopen.org/svn/GBBopen/trunk/ #blackboard-system framewo
 
 idna get_git git://github.com/antifuchs/idna.git #Common Lisp IDNA encding / decoding functions
 cl-libusb get_git git://github.com/soemraws/cl-libusb.git
+
+sb-bluetooth get_git git://github.com/akovalenko/sb-bluetooth.git
