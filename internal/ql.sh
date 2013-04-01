@@ -11,7 +11,7 @@ test -f $base/clbuild || exit 1
 ### find quicklisp
 ###
 
-qldir="$(echo ~/quicklisp)"
+qldir="${QUICKLISP_DIR:=$(echo ~/quicklisp)}"
 ql_setup_lisp=$qldir/setup.lisp
 ql_core="$base"/$LISP_IMPLEMENTATION_TYPE-base.core
 
@@ -31,12 +31,20 @@ install_quicklisp() {
     qli="$qlidir/quicklisp.lisp"
     mkdir -p "$qlidir"
     wget -O "$qli" http://beta.quicklisp.org/quicklisp.lisp
+
+    old_init_asdf_1="$init_asdf_1"
+    old_init_asdf_2="$init_asdf_2"
     init_asdf_1='(progn)'
     init_asdf_2='(progn)'
+
     echo "$quit" | \
 	run_lisp_raw \
 	$eval "(load \"$qli\")" \
-	$eval "(progn (quicklisp-quickstart:install) $quit)"
+	$eval "(progn (quicklisp-quickstart:install :path (merge-pathnames #P\"$qldir/\")) $quit)"
+
+    # restore intialization code
+    init_asdf_1="$old_init_asdf_1"
+    init_asdf_2="$old_init_asdf_2"
 }
 
 ensure_quicklisp() {
