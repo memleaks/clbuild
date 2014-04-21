@@ -144,12 +144,8 @@ link_extra_asds() {
 }
 
 count_systems() {
-    if test $system_dir/*.asd = $system_dir/'*.asd'; then
-	echo 0 system definition files registered
-    else
-	n_asd=`ls -1 "$system_dir"/*.asd | wc -l`
-	echo "$n_asd system definition files registered"
-    fi
+    n_asd=`ls -1 "$system_dir"/*.asd | wc -l`
+    echo "$n_asd system definition files currently registered"
 }
 
 relative_glob() {
