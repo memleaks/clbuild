@@ -377,3 +377,4 @@ idna get_git git://github.com/antifuchs/idna.git #Common Lisp IDNA encding / dec
 cl-libusb get_git git://github.com/soemraws/cl-libusb.git
 
 sb-bluetooth get_git git://github.com/akovalenko/sb-bluetooth.git
+cl-opencv get_git http://github.com/ryepup/cl-opencv.git
