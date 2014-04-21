@@ -184,6 +184,7 @@ cl-difflib       get_tarball http://lemonodor.com/code/cl-difflib_0.1.tar.gz
 lml2             get_git git://git.b9.com/lml2.git
 kmrcl            get_tarball http://files.b9.com/kmrcl/kmrcl-latest.tar.gz
 iolib            get_git git://gitorious.org/iolib/iolib.git
+libfixposix      get_git https://github.com/sionescu/libfixposix
 # swf2             get_git git://repo.or.cz/swf2.git #avm2 bytecode generator
 3bil             get_github 3b # avm2 bytecode generator (was swf2)
 3b-swf           get_github 3b # .swf file format lib used by 3bil
