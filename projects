@@ -380,3 +380,4 @@ sb-bluetooth get_git git://github.com/akovalenko/sb-bluetooth.git
 cl-opencv get_git http://github.com/ryepup/cl-opencv.git
 
 cl-fann get_git https://github.com/masonium/cl-fann
+cl-jpeg get_git https://github.com/sharplispers/cl-jpeg
