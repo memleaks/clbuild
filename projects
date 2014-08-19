@@ -10,7 +10,7 @@ closure    get_cvs_clnet  #CLIM-based web browser
 gsharp     get_git git://common-lisp.net/projects/gsharp/gsharp.git  #interactive, extensible editor for musical scores
 climacs    get_cvs_clnet  #CLIM-based text editor
 clim-desktop get_cvs_clnet  #integrates several McCLIM apps
-slime      get_cvs_clnet  #Emacs mode for Common Lisp development
+slime      get_git https://github.com/slime/slime  #Emacs mode for Common Lisp development
 beirc      get_cvs_clnet  #CLIM-based Internet Relay Chat client
 
 alexandria get_git git://common-lisp.net/projects/alexandria/alexandria.git #utility function library
