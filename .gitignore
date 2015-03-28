@@ -1,6 +1,8 @@
-.start-slime.el
-*~
-qlbuild.conf
+source/
+target/
 quicklisp-installer
-source
+qlbuild.conf
+clbuild.conf
+.start-slime.el
 *.core
+*~
