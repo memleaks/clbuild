@@ -1,0 +1,3 @@
+[submodule "source/sbcl"]
+	path = source/sbcl
+	url = git://github.com/sbcl/sbcl.git
